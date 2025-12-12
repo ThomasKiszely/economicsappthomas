@@ -1,0 +1,109 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sunset-Turkis tema */
+:root {
+    --primary-color: #26c6da;      /* klar turkis */
+    --secondary-color: #00838f;    /* dyb cyan */
+    --accent-color: #ff8a65;       /* varm orange kontrast */
+    --background-color: #80cbc4;   /* lys grønlig turkis */
+    --text-color: #212121;         /* mørk neutral */
+    --card-bg: #ffffff;
+    --border-color: #b2ebf2;
+    --border-radius: 6px;
+}
+
+/* Dark mode variation */
+[data-theme="dark"] {
+    --primary-color: #4dd0e1;      /* lys aqua accent */
+    --secondary-color: #00acc1;    /* dybere cyan */
+    --accent-color: #ff8a65;       /* varm orange nuance */
+    --background-color: #121212;   /* mørk baggrund */
+    --text-color: #e0f2f1;         /* lys tekst */
+    --card-bg: #1e1e1e;
+    --border-color: #26c6da;
+}
+
+/* Basis styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Overskrifter */
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #006064;
+}
+
+/* Lister */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+li { /*tilføj selv lister fra scriptet (li.subjectlist)*/
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+ }
+
+/* Wrapper */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Knapper */
+button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Formularer */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: var(--accent-color);
+}
