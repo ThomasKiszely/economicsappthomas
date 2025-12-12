@@ -1,6 +1,11 @@
 const transactionsList = document.getElementById('transaction-list');
 let budgetId;
 
+const backButton = document.getElementById('back-button');
+backButton.addEventListener('click', (e) => {
+    window.location.href="/";
+});
+
 async function loadTransactions(){
     try{
          const res = await fetch('/api/transactions/' + budgetId);
