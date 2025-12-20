@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const transactionRouter = require('./routes/transactionRoutes');
 const budgetRouter = require('./routes/budgetRoutes');
+const constantRouter = require('./routes/constantRoutes');
 const { notFound } = require('./middlewares/notFound');
 const { errorHandler } = require('./middlewares/errorHandler');
 const { log } = require('./middlewares/logger');
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // Routes
 app.use('/api/budgets', budgetRouter);
 app.use('/api/transactions', transactionRouter);
+app.use('/api/constants', constantRouter);
 
 app.use(notFound);
 app.use(errorHandler);

@@ -1,5 +1,5 @@
 function validateBudget(req, res, next) {
-    const { name, startDate, endDate, startAmount, endAmount } = req.body;
+    const { name, startDate, endDate, startAmount, actualAmount } = req.body;
     const errors = [];
     if (typeof(name) !== 'string' || name.trim().length === 0) {
         errors.push('Name is required');
@@ -15,7 +15,7 @@ function validateBudget(req, res, next) {
     if (!Number.isFinite(startAmount)) {
         errors.push('StartAmount is invalid');
     }
-    if (!Number.isFinite(endAmount)) {
+    if (actualAmount && !Number.isFinite(actualAmount)) {
         errors.push('EndAmount is invalid');
     }
     if (errors.length > 0) {

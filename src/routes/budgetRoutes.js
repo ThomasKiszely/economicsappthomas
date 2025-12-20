@@ -6,6 +6,7 @@ const { validateBudget } = require('../middlewares/budgetValidator');
 
 router.put('/:id', validateBudget,budgetController.updateBudget);
 router.delete('/:id', budgetController.deleteBudget);
+router.get('/:id', budgetController.getBudgetById);
 router.get('/', budgetController.getBudgets);
 router.post('/', validateBudget, budgetController.createBudget);
 

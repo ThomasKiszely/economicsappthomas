@@ -36,9 +36,9 @@ function render(budgets) {
         startAmount.className = 'start-amount';
         startAmount.textContent = 'Start amount: ' + budget.startAmount;
 
-        const endAmount = document.createElement('p');
-        endAmount.className = 'end-amount';
-        endAmount.textContent = 'End amount: ' + budget.endAmount;
+        const actualAmount = document.createElement('p');
+        actualAmount.className = 'actual-amount';
+        actualAmount.textContent = 'actual amount: ' + budget.actualAmount;
 
         const transButton = document.createElement('button');
         transButton.className = 'trans-button';
@@ -47,7 +47,7 @@ function render(budgets) {
             window.location.href = '/transactions.html?id=' + budget._id;
         });
 
-        budgetLi.append(budgetName, startAmount, endAmount, startDate, endDate, transButton);
+        budgetLi.append(budgetName, startAmount, actualAmount, startDate, endDate, transButton);
 
         budgetList.appendChild(budgetLi);
     });

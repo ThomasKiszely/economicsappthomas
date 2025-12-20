@@ -7,7 +7,10 @@ const budgetSchema = new mongoose.Schema({
     startDate: { type: Date, required: true },
     endDate: { type: Date, required: true },
     startAmount: { type: Number, required: true },
-    endAmount: { type: Number, required: true },
+    actualAmount: { type: Number, default: function() {
+        return this.startAmount;
+            }
+        },
 });
 
 module.exports = mongoose.model("Budget", budgetSchema);

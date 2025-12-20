@@ -10,6 +10,11 @@ async function getBudgets(){
     return budgets;
 }
 
+async function getBudgetById(id){
+    const budget = await budgetRepo.getBudgetById(id);
+    return budget;
+}
+
 async function updateBudget(id, budget){
     const updated = await budgetRepo.updateBudget(id, budget);
     return updated;
@@ -23,6 +28,7 @@ async function deleteBudget(id){
 module.exports = {
     createBudget,
     getBudgets,
+    getBudgetById,
     updateBudget,
     deleteBudget
 }
